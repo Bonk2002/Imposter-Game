@@ -231,7 +231,7 @@
     ["Moos", "Feuchtigkeit"],
     ["Farn", "Schatten"],
     ["Efeu", "Kletterpflanze"],
-    ["Seerose", "Teich"]
+    ["Seerose", "Teich"],
     ["Klavier", "Tasten"],
     ["Gitarre", "Saiten"],
     ["Schlagzeug", "Becken"],
@@ -276,7 +276,7 @@
     ["Tisch", "Essen"],
     ["Besen", "Fegen"],
     ["Schale", "Obst"],
-    ["Teller", "Besteck"]
+    ["Teller", "Besteck"],
     ["Flugzeug", "Startbahn"],
     ["Zug", "Gleise"],
     ["Schiff", "Anker"],
