@@ -4,11 +4,10 @@
   "description": "Multiplayer-Browser-Spiel 'Imposter v2' mit Node.js, Express, Socket.IO und Vite",
   "type": "module",
   "main": "src/server.js",
-  "scripts": {
-    "dev": "concurrently \"nodemon\" \"vite\"",
-    "build": "vite build",
-    "start": "node src/server.js"
-  },
+ "scripts": {
+  "start": "node src/server.js",
+  "build": "vite build"
+},
   "dependencies": {
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
