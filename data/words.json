@@ -1,5 +1,5 @@
 {
-  "berufe": [
+  "Berufe": [
     ["Arzt", "Praxis"],
     ["Lehrer", "Klassenzimmer"],
     ["Bäcker", "Ofen"],
@@ -32,7 +32,7 @@
     ["Busfahrer", "Lenkrad"]
   ],
 
-  "lebensmittel_getraenke": [
+  "Lebensmittel & Getränke": [
     ["Apfel", "Kern"],
     ["Banane", "Schale"],
     ["Birne", "Baum"],
