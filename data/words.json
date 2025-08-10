@@ -992,7 +992,8 @@
     [  "Schlafcouch", "ausziehen" ],
     [  "Hängesessel", "schweben" ],
     [  "Sitzsack", "kuschelig" ]
-
+  ],
+  
   "Berufe": [
     ["Arzt", "Praxis"],
     ["Lehrer", "Klassenzimmer"],
