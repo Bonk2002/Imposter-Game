@@ -1,5 +1,5 @@
 {
-  "alltagsgegenstaende": [
+  "Alltagsgegenstände": [
     ["Tasse", "Frühstück"],
     ["Brille", "Lesen"],
     ["Stuhl", "Rücken"],
@@ -67,7 +67,7 @@
     ["Verlängerungskabel", "Trommel"],
     ["Mehrfachsteckdose", "Schalter"]
   ],
-    "lebensmittel_getraenke": [
+    "Lebensmittel und Getränke": [
     ["Apfel", "Kern"],
     ["Banane", "Schale"],
     ["Birne", "Baum"],
