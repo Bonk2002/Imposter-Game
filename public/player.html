@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spieler – Imposter v2</title>
+
+  <link rel="stylesheet" href="./styles/base.css">
+  <link rel="stylesheet" href="./styles/cards.css">
+</head>
+<body>
+  <main class="container">
+    <!-- Bereich vor Spielstart -->
+    <section id="preGameUI">
+      <h2>Spieler beitreten</h2>
+      <form id="joinForm" class="row" style="gap:10px; flex-wrap:wrap;">
+        <input id="joinCode" class="input" placeholder="Code" />
+        <input id="playerName" class="input" placeholder="Spielername" />
+        <button class="btn" type="submit">Beitreten</button>
+      </form>
+
+      <!-- Spieler -->
+      <section id="playersSection" style="margin-top:16px">
+        <h3>Lobby</h3>
+        <ul id="players"></ul>
+      </section>
+    </section>
+
+    <!-- Spielbereich -->
+    <section class="game-grid" style="margin-top:16px">
+      <!-- Links: Timer / Reihenfolge / Chat -->
+      <section id="roundUI" class="hidden card">
+        <div class="row" style="justify-content:space-between; gap:16px;">
+          <div><strong>Zeit:</strong> <span id="timer">--:--</span></div>
+          <div><strong>Aktiv:</strong> <span id="activeName">–</span></div>
+        </div>
+
+        <div style="margin-top:8px">
+          <strong>Reihenfolge:</strong>
+          <ul id="orderList"></ul>
+        </div>
+
+        <div style="margin-top:12px">
+          <input id="chatInput" placeholder="Nachricht…" style="width:100%"/>
+          <div class="row" style="gap:10px; margin-top:8px">
+            <button id="sendChat" class="btn" type="button">Senden</button>
+            <button id="nextTurn" class="btn" type="button">Next</button>
+            <button id="proposeVote" class="btn" type="button">Vote</button>
+          </div>
+        </div>
+
+        <div id="chatLog" style="margin-top:12px"></div>
+      </section>
+
+      <!-- Rechts: Eigene Karte -->
+      <section>
+        <h3 id="gameTitle" class="hidden">Deine Karte</h3>
+        <div id="gameArea" class="hidden"></div>
+      </section>
+    </section>
+
+    <p style="margin-top:16px"><a href="./index.html">Zurück</a></p>
+  </main>
+
+  <!-- Scripts -->
+  <script type="module" src="./scripts/common/ui.js"></script>
+  <script type="module" src="./scripts/common/socket.js"></script>
+  <script type="module" src="./scripts/player.js"></script>
+</body>
+</html>

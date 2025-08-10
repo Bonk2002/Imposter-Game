@@ -1,0 +1,34 @@
+/* 3D-Flip-Card */
+.scene { perspective: 1200px; display:inline-block; }
+.card3d {
+  width: 320px; height: 190px; position: relative; transform-style: preserve-3d;
+  transition: transform 600ms ease;
+  border-radius: 18px; box-shadow: 0 14px 40px rgba(0,0,0,.35); cursor: pointer;
+}
+.card3d.is-flipped { transform: rotateY(180deg); }
+
+.card-face {
+  position:absolute; inset:0; backface-visibility:hidden;
+  border-radius: 18px; display:flex; align-items:center; justify-content:center;
+  padding:24px; text-align:center;
+}
+.card-front {
+  background: linear-gradient(140deg, #1c2140, #111425);
+  border:1px solid #2a2f55;
+}
+.card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(160deg, #6c7bff, #9ea7ff);
+  color:#0f1220; font-weight:800;
+}
+
+.card-title { font-size: 20px; letter-spacing:.5px; opacity:.9; }
+.card-text  { font-size: 28px; margin-top: 6px; }
+
+.deal-in {
+  animation: dealIn 480ms cubic-bezier(.2,.8,.2,1);
+}
+@keyframes dealIn {
+  from { transform: translateY(24px) scale(.98); opacity:0 }
+  to   { transform: translateY(0) scale(1); opacity:1 }
+}

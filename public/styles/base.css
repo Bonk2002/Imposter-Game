@@ -1,0 +1,162 @@
+:root{
+  --bg:#0f1220;
+  --card:#171a2b;
+  --text:#e6e9ff;
+  --accent:#6c7bff;
+  --muted:#a3a7c2;
+  --radius:16px;
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0; font-family:system-ui, Arial, sans-serif;
+  background: radial-gradient(1000px 600px at 50% 0%, #151836 0, #0f1220 60%, #0b0e1a 100%);
+  color:var(--text);
+}
+
+.container{
+  max-width:720px; margin:48px auto; padding:0 16px;
+}
+
+h1,h2,h3{ margin:8px 0 16px; }
+
+.card{
+  background:var(--card); border-radius:var(--radius);
+  padding:24px; box-shadow:0 10px 30px rgba(0,0,0,.35);
+  display:flex; flex-direction:column; gap:16px; align-items:center;
+}
+
+.row{ display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+input{
+  background:#0e1122; border:1px solid #262a45; color:var(--text);
+  padding:12px 14px; border-radius:10px; outline:none; min-width:180px;
+}
+.btn{
+  background:var(--accent); color:#111; padding:12px 16px;
+  border-radius:12px; border:none; text-decoration:none; display:inline-block;
+  font-weight:700; cursor:pointer;
+}
+.btn:hover{ filter:brightness(1.05); }
+
+.hidden{ display:none; }
+ul{ list-style:none; padding:0; margin:0; }
+.muted{ color: var(--muted); }
+label{ display:flex; gap:8px; align-items:center; }
+select{
+  background:#0e1122; border:1px solid #262a45; color:var(--text);
+  padding:10px 12px; border-radius:10px; outline:none;
+}
+<link rel="stylesheet" href="./styles/cards.css">
+
+#orderList { display:flex; gap:10px; flex-wrap:wrap; margin:6px 0 0; }
+#orderList li { padding:6px 10px; border-radius:10px; background:#0e1122; border:1px solid #262a45; }
+#orderList li.active { outline:2px solid var(--accent); }
+#chatLog .msg { margin:6px 0; opacity:.95; }
+#chatLog .me { font-weight:700; }
+
+/* Simple modal overlay */
+.modal-backdrop{
+  position:fixed; inset:0; background:rgba(6,8,16,.6);
+  display:flex; align-items:center; justify-content:center; z-index:9998;
+}
+.modal{
+  background:#171a2b; border:1px solid #2a2f55; border-radius:16px;
+  padding:20px; width:min(520px,90vw); box-shadow:0 20px 60px rgba(0,0,0,.5);
+}
+.modal h3{ margin:0 0 10px; }
+.modal .row{ margin-top:14px; }
+.modal .grid{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:10px; margin-top:12px; }
+.modal .choice{ padding:12px; border:1px solid #2a2f55; border-radius:12px; background:#0e1122; cursor:pointer; text-align:center; }
+.modal .choice:hover{ outline:2px solid var(--accent); }
+.badge{ display:inline-block; padding:4px 8px; border-radius:999px; background:#0e1122; border:1px solid #262a45; font-size:12px; }
+
+.danger { color:#ff5a66; font-weight:800; }
+.success { color:#5df29e; font-weight:800; }
+
+/* --- Game layout --- */
+.game-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:20px;
+  align-items:start;
+}
+@media (max-width: 900px){
+  .game-grid{ grid-template-columns: 1fr; }
+}
+
+/* --- Disabled look for inactive players --- */
+.btn:disabled,
+button:disabled,
+input:disabled{
+  opacity:.45;
+  filter:grayscale(.35);
+  cursor:not-allowed !important;
+}
+
+/* Minor UI polish */
+.card h3{ margin-top:0; }
+#chatLog{ max-height: 240px; overflow:auto; border:1px solid #262a45; border-radius:12px; padding:10px; background:#0f1224; }
+#orderList{ margin:8px 0 0; padding-left:18px; }
+
+/* ===== Voting Reveal ===== */
+.reveal-modal .modal-box{
+  max-width: 560px;
+  width: 100%;
+  padding: 18px 18px 22px;
+}
+
+.reveal-head{
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.reveal-card{
+  background: linear-gradient(135deg,#7b8cff 0%, #a494ff 100%);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,.25);
+  padding: 28px 24px;
+  text-align: center;
+}
+
+.reveal-badge{
+  display:inline-block;
+  font-weight: 800;
+  letter-spacing:.02em;
+  margin-bottom: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 14px;
+  background: rgba(0,0,0,.15);
+  color: #fff;
+}
+
+.reveal-badge.success{ background: rgba(66, 196, 120, .9); }
+.reveal-badge.danger{  background: rgba(255, 84, 84, .95); }
+
+.reveal-title{
+  font-size: clamp(20px, 2.8vw, 28px);
+  line-height: 1.2;
+  font-weight: 900;
+  color: #0b0f1f;
+  text-shadow: 0 1px 0 rgba(255,255,255,.25);
+}
+
+.reveal-imposter{
+  font-weight: 900;
+  color: #ff5a66;
+  margin-left: 6px;
+}
+
+.reveal-word{
+  margin-top: 12px;
+  font-weight: 700;
+  color: #0b0f1f;
+}
+
+.reveal-foot{
+  margin-top: 14px;
+  font-size: 12px;
+  opacity:.75;
+}
